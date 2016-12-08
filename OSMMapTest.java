@@ -31,6 +31,8 @@ public class OSMMapTest {
 
     @Test
     public void testLoad() {
+        // You don't actually need to implement the OSMMap.getGraph() method.
+        // I just did it for the sake of the test and will not include it in my submission.
         Graph g = m.getGraph();
         assertTrue(g.isDirectedGraph());
         assertEquals(121648, g.getVertices().size());
