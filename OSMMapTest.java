@@ -69,6 +69,7 @@ public class OSMMapTest {
         // On Windows, use \r\n, on *nix, change to \n. Sorry for not writing portable code...
         assertEquals("Marshall Avenue\r\n" +
                 "Story Street\r\n" +
+                "Crane Avenue\r\n" +
                 "West Street\r\n" +
                 "Union Drive\r\n" +
                 "Bissell Road\r\n" +
