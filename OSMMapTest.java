@@ -17,6 +17,7 @@ import static org.junit.Assert.assertTrue;
 public class OSMMapTest {
     // Change these paths to match your setup. For example, my text files are in the outer package directory
     private static final String routefile = "src/cs311/hw8/routes2.txt";
+    private static final String routefile2 = "src/cs311/hw8/routes3.txt";
     private static final String mapfile = "src/cs311/hw8/AmesMap.txt";
     private static OSMMap m;
 
@@ -76,6 +77,41 @@ public class OSMMapTest {
                 "Union Drive\r\n" +
                 "Bissell Road\r\n" +
                 "Osborn Drive\r\n", baos.toString());
+    }
+    
+    @Test
+    public void testmain3again() {
+        /*
+        Here's a hack that makes sure the method prints the right thing.
+        http://stackoverflow.com/a/8708357
+        */
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(baos);
+        System.setOut(ps);
+        String args[] = {mapfile, routefile2};
+        OSMMap.main3(args);
+        // On Windows, use \r\n, on *nix, change to \n. Sorry for not writing portable code...
+        assertEquals("Union Drive\r\n" +
+                "Lynn Avenue\r\n" +
+                "Lincoln Way\r\n" +
+                "Gray Avenue\r\n" +
+                "Gable Lane\r\n" +
+                "Gray Avenue\r\n" +
+                "Greeley Street\r\n" +
+                "Beach Avenue\r\n" +
+                "South 4th Street\r\n" +
+                "University Boulevard\r\n" +
+                "South 16th Street\r\n" +
+                "South Duff Avenue\r\n" +
+                "South 5th Street\r\n" +
+                "South Walnut Avenue\r\n" +
+                "South 4th Street\r\n" +
+                "South Oak Avenue\r\n" +
+                "South 2nd Street\r\n" +
+                "South Riverside Drive\r\n" +
+                "Lincoln Way\r\n" +
+                "Lynn Avenue\r\n" +
+                "Union Drive\r\n", baos.toString());
     }
 
     @Test
